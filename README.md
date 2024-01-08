@@ -1,14 +1,13 @@
-#testing ruby code rendering
+# testing ruby code rendering
 ```ruby 
 puts "hello world"
 ```
 
-##testing mermaid map mind rendering
+## testing mermaid map mind rendering
 ```mermaid
-%%{init: {'theme':'dark'}}%%
-mindmap
-root)**Networked Applications**(
-		id(**Lesson 1: Introduction and Prerequisites**)
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
+flowchart TD
+  markdown("`User enters **query** parameters`") --> id2(Browser parses URL + issues HTTP request) --> id3([App server waiting and accepts incoming connection])
 ```
 
-###testing markdown rending in Github
+### testing markdown rending in Github

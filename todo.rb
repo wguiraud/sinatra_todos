@@ -7,5 +7,6 @@ get "/" do
     {name: "Lunch Groceries" }, 
     {name: "Dinner Groceries" }
   ]
-  erb "You have no lists.", layout: :layout
+  erb :lists, layout: :layout
 end
+

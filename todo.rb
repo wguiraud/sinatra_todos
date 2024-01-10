@@ -6,6 +6,11 @@ get "/" do
   redirect "/lists"
 end
 
+configure do 
+  enable :sessions
+  set :session_secret 'my_secret'
+end
+
 get "/lists" do
   @lists = [
     {name: "Lunch Groceries", :todos => ["bread", "water"]}, 

@@ -2,20 +2,21 @@ require "sinatra"
 require "sinatra/reloader"
 require "tilt/erubis"
 
+before do 
+  session[:lists] ||= []
+end
+
 get "/" do 
   redirect "/lists"
 end
 
 configure do 
   enable :sessions
-  set :session_secret 'my_secret'
+  set :session_secret, SecureRandom.hex(32) 
 end
 
 get "/lists" do
-  @lists = [
-    {name: "Lunch Groceries", :todos => ["bread", "water"]}, 
-    {name: "Dinner Groceries", :todos => ["wine", "lavander"]}
-  ]
+  @lists = session[:lists]
 
   erb :lists, layout: :layout
 end

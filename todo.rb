@@ -28,3 +28,8 @@ get "/lists/new" do
   #redirect "/lists"
 end
 
+post "/lists" do 
+  session[:lists] << { name: params[:list_name], todos: [] }
+  redirect "/lists"
+end
+

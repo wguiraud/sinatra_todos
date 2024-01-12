@@ -1,6 +1,6 @@
 <% if session[:success] %>
   <div class="flash success">
-    <p><%= session[:success] %></p>
+    <p><%= session.delete[:success] %></p>
   </div>
 <% end %> 
 

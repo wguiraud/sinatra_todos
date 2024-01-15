@@ -36,6 +36,7 @@ post "/lists" do
     session[:success] = "The list has been created"
     redirect "/lists"
   else
+    session[:error] = "The list name must be between 1 and 150 characters long"
     erb :new_list, layout: :layout
   end
 end

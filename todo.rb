@@ -30,9 +30,9 @@ end
 
 # Create a new list
 post "/lists" do 
-  list_name = params[:list_name]
-  puts list_name
-  if list_name.strip.match?(/^[a-z ]{1,10}$/i)
+  list_name = params[:list_name].strip
+  if (1..150).cover? list_name.size
+    #list_name.match?(/^[a-z ]{1,150}$/i)
     session[:lists] << { name: params[:list_name], todos: [] }
     session[:success] = "The list has been created"
     redirect "/lists"

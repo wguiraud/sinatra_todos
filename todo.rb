@@ -36,6 +36,9 @@ post "/lists" do
     session[:lists] << { name: params[:list_name], todos: [] }
     session[:success] = "The list has been created"
     redirect "/lists"
+  elsif session[:lists].any? { |list| list[:name] == list_name }
+    session[:error] = "This list name is already being used"
+    erb :new_list, layout: :layout
   else
     session[:error] = "The list name must be between 1 and 150 characters long"
     erb :new_list, layout: :layout

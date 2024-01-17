@@ -55,6 +55,8 @@ end
 
 # view the todos of one specific list 
 get '/lists/:id' do 
-  params[:id]
+  id = params[:id].to_i
+  @list = session[:lists][id]
+  erb :list, layout: :layout 
 end
 

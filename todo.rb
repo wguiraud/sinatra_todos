@@ -52,3 +52,9 @@ post '/lists' do
     redirect '/lists'
   end
 end
+
+# view the todos of one specific list 
+get '/lists/:id' do 
+  params[:id]
+end
+

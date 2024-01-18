@@ -62,5 +62,7 @@ end
 
 # Edit an existing Todo list
 get '/lists/:id/edit' do 
+  id = params[:id].to_i
+  @list = session[:lists][id]
   erb :edit_list, layout: :layout
 end

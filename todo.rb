@@ -60,3 +60,7 @@ get '/lists/:id' do
   erb :list, layout: :layout 
 end
 
+# Edit an existing Todo list
+get '/lists/:id/edit' do 
+  erb :edit_list, layout: :layout
+end

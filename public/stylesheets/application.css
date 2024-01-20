@@ -1,11 +1,13 @@
 a {
-  color: inherit;
+  /*color: inherit;*/
+  color: #0d1b2a;
   text-decoration: none; 
 }
 
 body {
   font: normal 20px "PT Sans", Helvetica, Arial, sans-serif;
-  color: #3f3f3f;
+  /*color: #3f3f3f;*/
+  color: #415a77;
   background: #ffffff; 
 }
 
@@ -20,7 +22,7 @@ body > header h1 {
   width: 38%;
   font-size: 70px;
   /*color: #dd5f4f;*/
-  color: #dda64f;
+  color: #415a77;
 }
 
 body > header .actions {
@@ -37,7 +39,7 @@ body > header .actions a {
 
 body > header .actions a:hover {
   /*color: #dd5f4f;*/
-  color: #dda64f;
+  color: #778da9;
 }
 
 body > header .actions a.add:before {
@@ -282,7 +284,8 @@ form fieldset.actions a:hover {
 }
 
 #todos header ul a.edit:hover {
-  color: #dd5f4f;
+  /*color: #dd5f4f;*/
+  color: #dda64f;
 }
 
 #todos header ul a.edit:before {

@@ -32,7 +32,8 @@ end
 
 # return an error message if the name is invalid. Return nil if name is valid
 def error_for_list_name(name)
-  return 'List name must be between 1 and 150 characters' unless (1..150).cover? name.size
+  #return 'List name must be between 1 and 150 characters' unless (1..150).cover? name.size
+  return 'List name must be between 1 and 150 alphabetic characters' unless name.match?(/^[\w ]{1,150}$/) 
   return 'List name must be unique' if session[:lists].any? { |list| list[:name] == name }
 
   nil

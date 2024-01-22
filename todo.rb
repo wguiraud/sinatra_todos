@@ -76,7 +76,7 @@ post "/lists/:id" do
 
   error = error_for_list_name(list_name)
   if error
-    session[:error] = error
+    session[:error] = error #unless ....list_name == @lists[:name]
     erb :edit_list, layout: :layout
   else
     @list[:name] = list_name 

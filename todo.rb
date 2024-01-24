@@ -92,3 +92,12 @@ post "/lists/:id/delete" do
   session[:success] = "The list has been successfully deleted"
   redirect "/lists"
 end
+
+# Add a new Todo to a list 
+post "/lists/:list_id/todos" do 
+  list_id = params[:list_id].to_i
+  list = session[:lists][list_id]
+  list[:todos] << { name: params[:todo], completed: false }
+  session[:success] = "The todo has been successfully created"
+  redirect "/lists/#{list_id}"
+end

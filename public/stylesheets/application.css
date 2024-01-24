@@ -96,7 +96,8 @@ form input[type="text"] {
   height: 58px;
   padding: 15px 20px;
   font: normal 20px "PT Sans", Helvetica, Arial, sans-serif;
-  border: 1px solid #a4a4a4;
+  /*border: 1px solid #a4a4a4;*/
+  border: 1px solid #778da9;
   border-radius: 8px;
   box-sizing: border-box; 
 }
@@ -105,10 +106,12 @@ form input[type="submit"] {
   padding: 12px 45px;
   margin: 0 40px 0 0;
   font: normal 24px "PT Sans", Helvetica, Arial, sans-serif;
-  color: #ffffff;
+  /*color: #ffffff;*/
+  color: #e0e1dd;
   border: none;
   border-radius: 8px;
-  background: #dd5f4f;
+  /*background: #dd5f4f;*/
+  background: #415a77;
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-transition: background-color 200ms ease;
@@ -117,19 +120,22 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: #d13b28;
+  /*background-color: #d13b28;*/
+  background-color: #778da9;
   cursor: pointer; 
 }
 
 form fieldset.actions a {
-  color: #666666;
+  /*color: #666666;*/
+  color: #1b263b;
   -webkit-transition: color 200ms ease;
   -moz-transition: color 200ms ease;
   -o-transition: color 200ms ease; 
 }
 
 form fieldset.actions a:hover {
-  color: #b00b00; 
+  /*color: #b00b00; */
+  color: #778da9; 
 }
 
 .flash {
@@ -179,7 +185,8 @@ form fieldset.actions a:hover {
   margin: -8px 0 0 0;
   content: "";
   border-radius: 100%;
-  background: #dd5f4f; 
+  /*background: #dd5f4f;*/
+  background: #778da9; 
 }
 
 #lists li.complete:before {
@@ -285,7 +292,7 @@ form fieldset.actions a:hover {
 
 #todos header ul a.edit:hover {
   /*color: #dd5f4f;*/
-  color: #dda64f;
+  color: #778da9;
 }
 
 #todos header ul a.edit:before {
@@ -325,7 +332,8 @@ form fieldset.actions a:hover {
 }
 
 #todos header ul button.delete:hover {
-  color: #b00b00; 
+  /*color: #b00b00;*/
+  color: #778da9; 
 }
 
 #todos header ul button.delete:before {

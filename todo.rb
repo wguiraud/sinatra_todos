@@ -103,6 +103,7 @@ end
 
 # Add a new Todo to a list 
 post "/lists/:list_id/todos" do 
+  @params = params
 	@list_id = params[:list_id].to_i
 	@list = session[:lists][@list_id] #making the local variable an instance variable
 	todo_name = params[:todo].strip

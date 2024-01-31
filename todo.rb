@@ -131,7 +131,7 @@ post "/lists/:list_id/todos/:id/delete" do
   redirect"/lists/#{@list_id}"
 end
 
-# Mark or Unmrark a Todo as completed or uncompleted
+# Updating the status of a Todo
 post "/lists/:list_id/todo/:id" do 
 
 end

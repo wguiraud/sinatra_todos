@@ -130,3 +130,9 @@ post "/lists/:list_id/todos/:id/delete" do
   session[:success] = "The todo was successfully deleted"
   redirect"/lists/#{@list_id}"
 end
+
+# Mark or Unmrark a Todo as completed or uncompleted
+post "/lists/:list_id/todo/:id" do 
+
+end
+

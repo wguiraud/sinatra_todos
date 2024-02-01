@@ -141,8 +141,6 @@ post "/lists/:list_id/todos/:id" do
   is_completed = params[:completed] == "true"
   @list[:todos][todo_id][:completed] = is_completed
 
-  binding.pry 
-
   session[:success] = "The todo was successfully updated"
   redirect"/lists/#{@list_id}"
 

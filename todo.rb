@@ -131,7 +131,6 @@ post "/lists/:list_id/todos/:id/delete" do
   redirect"/lists/#{@list_id}"
 end
 
-<<<<<<< HEAD
 post "/lists/:list_id/todos/:id" do
   @list_id = params[:list_id].to_i
   @list = session[:lists][@list_id]
@@ -145,10 +144,3 @@ post "/lists/:list_id/todos/:id" do
   redirect"/lists/#{@list_id}"
 
 end
-=======
-# Updating the status of a Todo
-post "/lists/:list_id/todo/:id" do 
-
-end
-
->>>>>>> eb3093162760bc939a061bef54e84a5a40a64ac0

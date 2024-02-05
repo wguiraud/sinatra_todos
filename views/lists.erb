@@ -1,6 +1,6 @@
 <ul id="lists"> 
 	<% @lists.each_with_index do |list, index| %>
-    <% if list[:todos].all? { |td| td[:completed] } %>
+    <% if list[:todos].all? { |td| td[:completed] } && list[:todos].size > 0 %>
       <li class="complete">
     <% else %>
       <li>

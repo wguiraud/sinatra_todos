@@ -12,7 +12,7 @@ configure do
 end
 
 helpers do 
-  def list_completed?(list)
+  def list_complete?(list)
     list[:todos].all? { |td| td[:completed] } && list[:todos].size > 0 
   end
 

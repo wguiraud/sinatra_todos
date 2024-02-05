@@ -20,6 +20,14 @@ helpers do
   def list_class(list) 
     "complete" if list_complete?(list)
   end
+
+  def todos_remaining_count(list)
+    list[:todos].select { |td| !td[:completed] }.size
+  end
+
+  def todos_count(list)
+    list[:todos].size
+  end
 end
 
 before do

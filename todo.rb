@@ -6,17 +6,24 @@ require "sinatra/content_for"
 require "tilt/erubis"
 require "pry"
 
+configure do
+  enable :sessions
+  set :session_secret, SecureRandom.hex(32)
+end
+
+helpers do 
+  def list_completed?(list)
+    list[:todos].all? { |td| td[:completed] } && list[:todos].size > 0 
+  end
+
+end
+
 before do
   session[:lists] ||= []
 end
 
 get "/" do
   redirect "/lists"
-end
-
-configure do
-  enable :sessions
-  set :session_secret, SecureRandom.hex(32)
 end
 
 # View list of lists

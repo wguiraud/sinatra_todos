@@ -14,7 +14,7 @@ end
 helpers do 
 
   def list_complete?(list)
-    list[:todos].all? { |td| td[:completed] } && list[:todos].size > 0 
+    todos_count(list) > 0 && todos_remaining_count(list) == 0  
   end
 
   def list_class(list) 

@@ -31,7 +31,6 @@ get "/lists/new" do
   erb :new_list, layout: :layout
 end
 
-# return an error message if the name is invalid. Return nil if name is valid
 def error_for_list_name(name)
   #return "List name must be between 1 and 150 characters" unless (1..150).cover? name.size
   return "List name must be between 1 and 150 alphabetic characters" unless name.match?(/^[\w ]{1,150}$/) 
@@ -40,7 +39,6 @@ def error_for_list_name(name)
   nil
 end
 
-# return an error message if the name is invalid. Return nil otherwise 
 def error_for_todo_name(todo_name)
   #return "Todo name must be between 1 and 100 characters" unless (1..150).cover? name.size
   return "The todo name must be between 1 and 100 alphabetic characters" unless todo_name.match?(/^[\w ]{1,100}$/)
@@ -106,7 +104,7 @@ end
 post "/lists/:list_id/todos" do 
   @params = params
 	@list_id = params[:list_id].to_i
-	@list = session[:lists][@list_id] #making the local variable an instance variable
+	@list = session[:lists][@list_id] 
 	todo_name = params[:todo].strip
 	
 	error = error_for_todo_name(todo_name)
@@ -114,7 +112,7 @@ post "/lists/:list_id/todos" do
 		session[:error] = error
 		erb :list, layout: :layout
 	else
-		@list[:todos] << { name: todo_name, completed: false } # refactoring this line of code accordingly
+		@list[:todos] << { name: todo_name, completed: false } 
 		session[:success] = "The todo has been successfully added"
 		redirect "/lists/#{@list_id}"
 	end 

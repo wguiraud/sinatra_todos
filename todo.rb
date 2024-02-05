@@ -12,10 +12,14 @@ configure do
 end
 
 helpers do 
+
   def list_complete?(list)
     list[:todos].all? { |td| td[:completed] } && list[:todos].size > 0 
   end
 
+  def list_class(list) 
+    "complete" if list_complete?(list)
+  end
 end
 
 before do

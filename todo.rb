@@ -40,8 +40,10 @@ helpers do
       end
     end
 
-    incomplete_list.each { |list, idx| yield(list, idx) }
-    completed_list.each { |list, idx| yield(list, idx) }
+    #incomplete_list.each { |list, idx| yield(list, idx) }
+    #completed_list.each { |list, idx| yield(list, idx) }
+    incomplete_list.each(&block)
+    completed_list.each(&block)
 
   end
 end

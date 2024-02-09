@@ -30,38 +30,17 @@ helpers do
   end
 
   def sort_lists(lists, &block)
-    completed_list, incomplete_list = {}, {}
-
-    lists.each_with_index do |list, idx|
-      if list_complete?(list)
-        completed_list[list] = idx
-      else
-        incomplete_list[list] = idx
-      end
-    end
-
-    #incomplete_list.each { |list, idx| yield(list, idx) }
-    #completed_list.each { |list, idx| yield(list, idx) }
-    incomplete_list.each(&block)
-    completed_list.each(&block)
-
+		completed_lists, incompleted_lists = lists.partition { |list| list_complete?(list) }
+		
+		incompleted_lists.each { |list| yield list, lists.index(list) }
+		completed_lists.each { |list| yield list, lists.index(list) }
   end
 
   def sort_todos(todos, &block)
-    completed_todos, incomplete_todos = {}, {}
-
-    todos.each_with_index do |todo, idx|
-      if todo[:completed] 
-        completed_todos[todo] = idx
-      else
-        incomplete_todos[todo] = idx
-      end
-    end
-
-    #incomplete_todos.each { |todos, idx| yield(todos, idx) }
-    #completed_todos.each { |todos, idx| yield(todos, idx) }
-    incomplete_todos.each(&block)
-    completed_todos.each(&block)
+		completed_todos, incompleted_todos = todos.partition { |todo| todo[:completed] }
+		
+		incompleted_todos.each { |todo| yield todo, todos.index(todo) }
+		completed_todos.each { |todo| yield todo, todos.index(todo) }
 
   end
 

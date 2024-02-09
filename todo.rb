@@ -46,6 +46,25 @@ helpers do
     completed_list.each(&block)
 
   end
+
+  def sort_todos(todos, &block)
+    completed_todos, incomplete_todos = {}, {}
+
+    todos.each_with_index do |todo, idx|
+      if todo[:completed] 
+        completed_todos[todo] = idx
+      else
+        incomplete_todos[todo] = idx
+      end
+    end
+
+    #incomplete_todos.each { |todos, idx| yield(todos, idx) }
+    #completed_todos.each { |todos, idx| yield(todos, idx) }
+    incomplete_todos.each(&block)
+    completed_todos.each(&block)
+
+  end
+
 end
 
 before do
